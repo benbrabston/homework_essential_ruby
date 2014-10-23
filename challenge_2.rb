@@ -30,10 +30,7 @@ principal_amount = 200000.0
 #     available to you here because you connected to challenge_1.rb with
 #     Line 1 of this file.
 
-# ==============================================================
-# Your code goes here.
-# You shouldn't have to write code or change code anywhere else.
-
-# loan_quotes.each ...
-
-# ==============================================================
+loan_quotes.each do |bank_num|
+  monthly_pmt = pmt(bank_num["annual_rate"]/12,number_of_monthly_payments,principal_amount)
+  puts "The monthly payment from #{bank_num["bank"]} will be $#{monthly_pmt.round(2)}"
+end
